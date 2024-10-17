@@ -1,0 +1,95 @@
+body {
+  font-family: 'Arial', sans-serif; /* Set the font family */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: #f4f4f4; /* Fallback background color */
+  background-image: url('../public/images/bg-images.jpg'); /* Correct path for public/images */
+  background-size: cover; /* Make the background image cover the entire page */
+  background-position: center; /* Center the background image */
+  height: 100vh; /* Full height */
+}
+
+header {
+  background: #333; /* Header background color */
+  color: #fff; /* Header text color */
+  padding: 10px 0; /* Padding for header */
+  text-align: center; /* Center text in header */
+}
+
+nav ul {
+  list-style: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+  display: inline; /* Display list items inline */
+  margin: 0 15px; /* Margin between list items */
+}
+
+section {
+  padding: 20px; /* Padding for sections */
+  margin: 20px; /* Margin for sections */
+  background: rgba(255, 255, 255, 0.5); /* White background with some transparency */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  position: relative; /* Ensure sections are positioned relative to the banner */
+  z-index: 2; /* Ensure sections are above the background */
+}
+
+h1, h2 {
+  color: #333; /* Title color */
+  z-index: 2; /* Ensure text is above the banner */
+}
+
+.App {
+  text-align: center; /* Center text in App */
+}
+
+.App-logo {
+  height: 40vmin; /* Set logo height */
+  pointer-events: none; /* Disable pointer events on logo */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear; /* Spin animation for logo */
+  }
+}
+
+.App-header {
+  background-color: #282c34; /* Header background color */
+  min-height: 100vh; /* Minimum height for header */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  font-size: calc(10px + 2vmin); /* Responsive font size */
+  color: white; /* Text color */
+}
+
+.App-link {
+  color: #61dafb; /* Link color */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); /* Start rotation at 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* End rotation at 360 degrees */
+  }
+}
+
+.banner {
+  position: absolute; /* Position the banner absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+}
