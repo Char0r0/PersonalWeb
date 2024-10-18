@@ -1,12 +1,65 @@
 body {
-  font-family: 'Arial', sans-serif; /* Set the font family */
+  font-family: 'Roboto', sans-serif; /* Use Google Fonts */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
-  background-color: #f4f4f4; /* Fallback background color */
-  background-image: url('../public/images/bg-images.jpg'); /* Correct path for public/images */
-  background-size: cover; /* Make the background image cover the entire page */
-  background-position: center; /* Center the background image */
-  height: 100vh; /* Full height */
+  background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
+  /* Or use background image */
+  background-image: url('../public/images/bg-images.jpg'); 
+  background-size: cover; /* Ensure background covers the entire page */
+  background-position: center; /* Center the background */
+  background-attachment: fixed;
+}
+
+.navbar {
+  position: fixed; /* Fix the navbar to the top */
+  top: 20px; /* Adjust the top position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment */
+  display: flex;
+  justify-content: center; /* Center alignment */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 25px; /* Rounded corners */
+  padding: 5px 20px; /* Reduced padding for a smaller navbar */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar ul {
+  list-style: none; /* Remove default list style */
+  display: flex; /* Horizontal arrangement */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar li {
+  margin: 0 10px; /* Reduced margin between list items */
+  cursor: pointer; /* Show pointer on hover */
+  font-weight: 500; /* Bold font */
+  color: #555; /* Font color */
+  transition: background-color 0.3s; /* Smooth background transition */
+  padding: 10px 15px; /* Padding for better click area */
+  border-radius: 15px; /* Rounded corners for items */
+}
+
+.navbar li:hover {
+  background-color: #e0eafc; /* Change background on hover */
+}
+
+.navbar li.active {
+  background-color: #e0eafc; /* Active item background color */
+  color: black; /* Active item font color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect for active item */
+}
+
+section {
+  padding: 100px 20px; /* Padding for sections */
+  margin: 20px; /* Margin for sections */
+  background: rgba(11, 11, 11, 0.8); /* White background with some transparency */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  position: relative; /* Ensure sections are positioned relative to the banner */
+  z-index: 2; /* Ensure sections are above the background */
+  color: white;
+  min-height: 100vh;
 }
 
 header {
@@ -27,9 +80,9 @@ nav ul li {
 }
 
 section {
-  padding: 20px; /* Padding for sections */
-  margin: 20px; /* Margin for sections */
-  background: rgba(255, 255, 255, 0.5); /* White background with some transparency */
+  padding: 100px 20px; /* Padding for sections */
+  margin: 0; /* Remove margin to ensure it starts at the top */
+  background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
   position: relative; /* Ensure sections are positioned relative to the banner */
@@ -37,7 +90,7 @@ section {
 }
 
 h1, h2 {
-  color: #333; /* Title color */
+  color: #ececec; /* Title color */
   z-index: 2; /* Ensure text is above the banner */
 }
 
@@ -81,15 +134,62 @@ h1, h2 {
 }
 
 .banner {
-  position: absolute; /* Position the banner absolutely */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  color: white; /* Text color */
-  text-align: center; /* Center text */
+  margin-top: 60px; /* Add margin to avoid overlap with fixed navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px); /* Make banner occupy full viewport height */
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Ensure content is on top */
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: -1; /* Ensure background is behind content */
+}
+
+.content {
+  z-index: 2; /* Ensure content is on top */
+  color: rgba(255, 255, 255, 0.9); /* Off-white color */
+}
+
+.highlight {
+  color: #61dafb; /* Highlighted text color */
+  font-weight: bold; /* Bold */
+}
+
+.buttons {
+  margin-top: 20px; /* Button spacing */
+}
+
+.btn {
+  background-color: #61dafb; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Button spacing */
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+.btn:hover {
+  background-color: #4db8e0; /* Background color on hover */
+}
+
+.download {
+  background-color: transparent; /* Download button transparent background */
+  border: 2px solid #61dafb; /* Border */
+}
+
+.download:hover {
+  background-color: #61dafb; /* Background color on hover */
+  color: white; /* Text color on hover */
 }
