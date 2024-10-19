@@ -134,11 +134,12 @@ h1, h2 {
 }
 
 .banner {
-  margin-top: 60px; /* Add margin to avoid overlap with fixed navbar */
+  margin-top: 300px; /* Add margin to avoid overlap with fixed navbar */
+  margin-bottom: -20px;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
-  height: calc(100vh - 60px); /* Make banner occupy full viewport height */
+  height: calc(100vh - 0px); /* Make banner occupy full viewport height */
   text-align: center;
   position: relative;
   z-index: 1; /* Ensure content is on top */
@@ -151,13 +152,21 @@ h1, h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background */
   z-index: -1; /* Ensure background is behind content */
 }
 
+.btn i {
+  color: white; /* 图标颜色 */
+  font-size: 1.5em; /* 图标大小 */
+}
+
 .content {
-  z-index: 2; /* Ensure content is on top */
+  z-index: 3; /* Ensure content is on top */
   color: rgba(255, 255, 255, 0.9); /* Off-white color */
+  background-color: transparent; /* 设置为纯透明 */
+  position: relative; /* 确保相对定位 */
+  opacity: 1; /* 确保内容完全可见 */
 }
 
 .highlight {
@@ -177,11 +186,12 @@ h1, h2 {
   border-radius: 5px; /* Rounded corners */
   text-decoration: none; /* Remove underline */
   margin: 0 10px; /* Button spacing */
-  transition: background-color 0.3s; /* Add transition effect */
+  transition: background-color 0.3s, transform 0.2s; /* 添加背景色和变换的过渡效果 */
 }
 
 .btn:hover {
   background-color: #4db8e0; /* Background color on hover */
+  transform: scale(1.05); /* 鼠标悬停时放大按钮 */
 }
 
 .download {
@@ -190,6 +200,25 @@ h1, h2 {
 }
 
 .download:hover {
-  background-color: #61dafb; /* Background color on hover */
-  color: white; /* Text color on hover */
+  background-color: #7cd3eb; /* Background color on hover */
+  color: rgb(248, 248, 248); /* Text color on hover */
+}
+
+.icon {
+  color: white; /* 图标颜色 */
+  font-size: 2em; /* 图标大小 */
+  margin-left: 18px; /* 图标与按钮之间的间距 */
+  vertical-align: middle;
+  margin-top: 2px;
+  line-height: 3;
+  transition: color 0.3s, transform 0.2s; /* 添加颜色和变换的过渡效果 */
+}
+
+.icon:hover {
+  color: #54c2e0; /* 鼠标悬停时改变图标颜色 */
+  transform: scale(1.2); /* 鼠标悬停时放大图标 */
+}
+
+.transparent-bg {
+  background-color: transparent; /* 设置背景为透明 */
 }

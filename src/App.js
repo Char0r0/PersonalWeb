@@ -82,34 +82,36 @@ function App() {
             <div className="banner">
                 <div className="content">
                     <h1>Hello, I'm Charles.</h1>
-                    <h2>I'm a Devops Engineer with 2 years of hands-on experience in software development. My focus is building <span className="highlight">Cloud Infrastructure.</span></h2>
-                    <div className="buttons">
-                        <a href="#contact" className="btn">Contact Me Here →</a>
+                    <h2>I'm a DevOps Engineer with 2 years of hands-on experience in software development.</h2>
+                    <h2>My focus is building <span className="highlight">Cloud Infrastructure.</span></h2>                    <div className="buttons">
+                        <a href="#contact" className="btn download">Contact Me</a>
                         <a href="/path/to/cv.pdf" className="btn download">Download CV</a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-linkedin icon"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-github icon"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <section id="home" ref={homeRef}>
-                <h1>Home</h1>
-                <p>Welcome to my personal website!</p>
-            </section>
-            <section id="about" ref={aboutRef}>
+            <section id="about" ref={aboutRef} className="transparent-bg">
                 <h1>About</h1>
                 <p>Information about me.</p>
             </section>
-            <section id="skills" ref={skillsRef}>
+            <section id="skills" ref={skillsRef} className="transparent-bg">
                 <h1>Skills</h1>
                 <p>Details about my skills.</p>
             </section>
-            <section id="experience" ref={experienceRef}>
+            <section id="experience" ref={experienceRef} className="transparent-bg">
                 <h1>Experience</h1>
                 <p>My work experience.</p>
             </section>
-            <section id="projects" ref={projectsRef}>
+            <section id="projects" ref={projectsRef} className="transparent-bg">
                 <h1>Projects</h1>
                 <p>Projects I have worked on.</p>
             </section>
-            <section id="contact" ref={contactRef}>
+            <section id="contact" ref={contactRef} className="transparent-bg">
                 <h1>Contact</h1>
                 <p>How to get in touch with me.</p>
             </section>
