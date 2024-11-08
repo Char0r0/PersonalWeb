@@ -4,11 +4,29 @@ body {
   padding: 0; /* Remove default padding */
   background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
   /* Or use background image */
-  background-image: url('../public/images/bg-images.jpg'); 
+  background-image: url('../public/images/devops-bg.webp'); 
   background-size: cover; /* Ensure background covers the entire page */
   background-position: center; /* Center the background */
   background-attachment: fixed;
+  position: relative; /* 确保背景伪元素相对于body定位 */
 }
+
+
+/*
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../public/images/devops-bg.webp'); 
+  background-size: cover; 
+  background-position: center; 
+  filter: grayscale(0.5); 
+  z-index: -1;  
+}
+*/
 
 .navbar {
   position: fixed; /* Fix the navbar to the top */
@@ -221,4 +239,9 @@ h1, h2 {
 
 .transparent-bg {
   background-color: transparent; /* 设置背景为透明 */
+}
+
+.banner h1, .banner h2 {
+  text-shadow: 2px 2px 4px rgba(0.1, 0.1, 0.9, 0.9); /* 添加文本阴影 */
+  color: rgb(236, 236, 236); /* 确保字体颜色为白色 */
 }

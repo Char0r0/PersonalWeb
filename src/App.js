@@ -1,5 +1,6 @@
 // src/App.js
 import React, { useState, useRef, useEffect } from 'react';
+import { handleNavClick } from './utils'; // 导入函数
 import './App.css';
 
 function App() {
@@ -12,15 +13,6 @@ function App() {
     const experienceRef = useRef(null);
     const projectsRef = useRef(null);
     const contactRef = useRef(null);
-
-    const handleNavClick = (section, ref) => {
-        setActiveSection(section); // 更新活动项
-        if (section === 'home') {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // 直接滚动到页面顶部
-        } else {
-            ref.current.scrollIntoView({ behavior: 'smooth' }); // 平滑滚动到对应位置
-        }
-    };
 
     useEffect(() => {
         const sections = [
@@ -59,22 +51,22 @@ function App() {
         <div>
             <nav className="navbar">
                 <ul>
-                    <li className={activeSection === 'home' ? 'active' : ''} onClick={() => handleNavClick('home')}>
+                    <li className={activeSection === 'home' ? 'active' : ''} onClick={() => handleNavClick('home', homeRef, setActiveSection)}>
                         Home
                     </li>
-                    <li className={activeSection === 'about' ? 'active' : ''} onClick={() => handleNavClick('about', aboutRef)}>
+                    <li className={activeSection === 'about' ? 'active' : ''} onClick={() => handleNavClick('about', aboutRef, setActiveSection)}>
                         About
                     </li>
-                    <li className={activeSection === 'skills' ? 'active' : ''} onClick={() => handleNavClick('skills', skillsRef)}>
+                    <li className={activeSection === 'skills' ? 'active' : ''} onClick={() => handleNavClick('skills', skillsRef, setActiveSection)}>
                         Skills
                     </li>
-                    <li className={activeSection === 'experience' ? 'active' : ''} onClick={() => handleNavClick('experience', experienceRef)}>
+                    <li className={activeSection === 'experience' ? 'active' : ''} onClick={() => handleNavClick('experience', experienceRef, setActiveSection)}>
                         Experience
                     </li>
-                    <li className={activeSection === 'projects' ? 'active' : ''} onClick={() => handleNavClick('projects', projectsRef)}>
+                    <li className={activeSection === 'projects' ? 'active' : ''} onClick={() => handleNavClick('projects', projectsRef, setActiveSection)}>
                         Projects
                     </li>
-                    <li className={activeSection === 'contact' ? 'active' : ''} onClick={() => handleNavClick('contact', contactRef)}>
+                    <li className={activeSection === 'contact' ? 'active' : ''} onClick={() => handleNavClick('contact', contactRef, setActiveSection)}>
                         Contact
                     </li>
                 </ul>
@@ -83,13 +75,14 @@ function App() {
                 <div className="content">
                     <h1>Hello, I'm Charles.</h1>
                     <h2>I'm a DevOps Engineer with 2 years of hands-on experience in software development.</h2>
-                    <h2>My focus is building <span className="highlight">Cloud Infrastructure.</span></h2>                    <div className="buttons">
+                    <h2>My focus is building <span className="highlight">Cloud Infrastructure.</span></h2>
+                    <div className="buttons">
                         <a href="#contact" className="btn download">Contact Me</a>
-                        <a href="/path/to/cv.pdf" className="btn download">Download CV</a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="../public/files/CharlesCV.pdf" className="btn download" download>Download CV</a>
+                        <a href="https://linkedin.com/in/charles-zh" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin icon"></i>
                         </a>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Char0r0" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-github icon"></i>
                         </a>
                     </div>
