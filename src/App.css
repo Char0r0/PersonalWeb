@@ -1,247 +1,1105 @@
+/* Base styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Use Google Fonts */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
-  /* Or use background image */
-  background-image: url('../public/images/devops-bg.webp'); 
-  background-size: cover; /* Ensure background covers the entire page */
-  background-position: center; /* Center the background */
-  background-attachment: fixed;
-  position: relative; /* 确保背景伪元素相对于body定位 */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #151515;
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-
-/*
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../public/images/devops-bg.webp'); 
-  background-size: cover; 
-  background-position: center; 
-  filter: grayscale(0.5); 
-  z-index: -1;  
+/* Enhanced breathing light effect */
+.breathing-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1 !important;
+    pointer-events: none !important;
+    overflow: hidden;
 }
-*/
 
+/* First glow */
+.breathing-background::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(97, 218, 251, 0.4) 0%,
+            rgba(97, 218, 251, 0.2) 25%,
+            rgba(97, 218, 251, 0.1) 35%,
+            transparent 70%
+        ),
+        radial-gradient(
+            circle at 70% 70%,
+            rgba(72, 168, 194, 0.4) 0%,
+            rgba(72, 168, 194, 0.2) 25%,
+            rgba(72, 168, 194, 0.1) 35%,
+            transparent 70%
+        );
+    animation: glow 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Second glow (additional glow layer) */
+.breathing-background::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(
+            circle at 60% 40%,
+            rgba(97, 218, 251, 0.3) 0%,
+            rgba(97, 218, 251, 0.1) 30%,
+            transparent 65%
+        );
+    animation: glow2 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.95) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) rotate(2deg);
+    }
+}
+
+@keyframes glow2 {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1) rotate(-2deg);
+    }
+}
+
+/* Content container */
+.app-container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar styles */
 .navbar {
-  position: fixed; /* Fix the navbar to the top */
-  top: 20px; /* Adjust the top position */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center alignment */
-  display: flex;
-  justify-content: center; /* Center alignment */
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
-  border-radius: 25px; /* Rounded corners */
-  padding: 5px 20px; /* Reduced padding for a smaller navbar */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  z-index: 1000; /* Ensure it stays on top of other content */
+    position: fixed !important;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999 !important;
+    width: auto;
+    max-width: 80%;
+    pointer-events: all !important;
 }
 
 .navbar ul {
-  list-style: none; /* Remove default list style */
-  display: flex; /* Horizontal arrangement */
-  padding: 0; /* Remove default padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: inherit;
+    pointer-events: all !important;
 }
 
 .navbar li {
-  margin: 0 10px; /* Reduced margin between list items */
-  cursor: pointer; /* Show pointer on hover */
-  font-weight: 500; /* Bold font */
-  color: #555; /* Font color */
-  transition: background-color 0.3s; /* Smooth background transition */
-  padding: 10px 15px; /* Padding for better click area */
-  border-radius: 15px; /* Rounded corners for items */
+    padding: 8px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    font-size: 0.95em;
+    user-select: none;
+    position: relative;
+    z-index: inherit;
+    pointer-events: all !important;
 }
 
 .navbar li:hover {
-  background-color: #e0eafc; /* Change background on hover */
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.1);
 }
 
 .navbar li.active {
-  background-color: #e0eafc; /* Active item background color */
-  color: black; /* Active item font color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect for active item */
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.2);
+    box-shadow: 0 2px 10px rgba(97, 218, 251, 0.3);
 }
 
+/* Remove all possible interference styles */
+.breathing-background {
+    pointer-events: none;
+    z-index: -1;
+}
+
+.app-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure content area is positioned correctly */
 section {
-  padding: 100px 20px; /* Padding for sections */
-  margin: 20px; /* Margin for sections */
-  background: rgba(11, 11, 11, 0.8); /* White background with some transparency */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  position: relative; /* Ensure sections are positioned relative to the banner */
-  z-index: 2; /* Ensure sections are above the background */
-  color: white;
-  min-height: 100vh;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0 20px;
 }
 
-header {
-  background: #333; /* Header background color */
-  color: #fff; /* Header text color */
-  padding: 10px 0; /* Padding for header */
-  text-align: center; /* Center text in header */
-}
-
-nav ul {
-  list-style: none; /* Remove default list style */
-  padding: 0; /* Remove default padding */
-}
-
-nav ul li {
-  display: inline; /* Display list items inline */
-  margin: 0 15px; /* Margin between list items */
-}
-
-section {
-  padding: 100px 20px; /* Padding for sections */
-  margin: 0; /* Remove margin to ensure it starts at the top */
-  background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  position: relative; /* Ensure sections are positioned relative to the banner */
-  z-index: 2; /* Ensure sections are above the background */
-}
-
-h1, h2 {
-  color: #ececec; /* Title color */
-  z-index: 2; /* Ensure text is above the banner */
-}
-
-.App {
-  text-align: center; /* Center text in App */
-}
-
-.App-logo {
-  height: 40vmin; /* Set logo height */
-  pointer-events: none; /* Disable pointer events on logo */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear; /* Spin animation for logo */
-  }
-}
-
-.App-header {
-  background-color: #282c34; /* Header background color */
-  min-height: 100vh; /* Minimum height for header */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  font-size: calc(10px + 2vmin); /* Responsive font size */
-  color: white; /* Text color */
-}
-
-.App-link {
-  color: #61dafb; /* Link color */
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); /* Start rotation at 0 degrees */
-  }
-  to {
-    transform: rotate(360deg); /* End rotation at 360 degrees */
-  }
-}
-
+/* Page layout adjustment */
 .banner {
-  margin-top: 300px; /* Add margin to avoid overlap with fixed navbar */
-  margin-bottom: -20px;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  height: calc(100vh - 0px); /* Make banner occupy full viewport height */
-  text-align: center;
-  position: relative;
-  z-index: 1; /* Ensure content is on top */
+    min-height: 100vh;
+    padding-top: 80px;
+    margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background */
-  z-index: -1; /* Ensure background is behind content */
-}
-
-.btn i {
-  color: white; /* 图标颜色 */
-  font-size: 1.5em; /* 图标大小 */
-}
-
+/* Adjust content container styles */
 .content {
-  z-index: 3; /* Ensure content is on top */
-  color: rgba(255, 255, 255, 0.9); /* Off-white color */
-  background-color: transparent; /* 设置为纯透明 */
-  position: relative; /* 确保相对定位 */
-  opacity: 1; /* 确保内容完全可见 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
 }
 
-.highlight {
-  color: #61dafb; /* Highlighted text color */
-  font-weight: bold; /* Bold */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner {
+        min-height: 75vh;
+    }
+
+    section {
+        min-height: 70vh;
+        padding: 0 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
 }
 
-.buttons {
-  margin-top: 20px; /* Button spacing */
-}
-
+/* Button styles */
 .btn {
-  background-color: #61dafb; /* Button background color */
-  color: white; /* Button text color */
-  padding: 10px 20px; /* Button padding */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  margin: 0 10px; /* Button spacing */
-  transition: background-color 0.3s, transform 0.2s; /* 添加背景色和变换的过渡效果 */
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
 }
 
+/* Remove the previous ::before pseudo-element */
+.btn::before {
+    display: none; /* Remove the ellipse background */
+}
+
+/* Simplify hover effect */
 .btn:hover {
-  background-color: #4db8e0; /* Background color on hover */
-  transform: scale(1.05); /* 鼠标悬停时放大按钮 */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.3);
+    border-color: rgba(97, 218, 251, 0.5);
+    background: rgba(97, 218, 251, 0.2); /* More gentle background color */
 }
 
-.download {
-  background-color: transparent; /* Download button transparent background */
-  border: 2px solid #61dafb; /* Border */
+.btn:active {
+    transform: translateY(-1px);
 }
 
-.download:hover {
-  background-color: #7cd3eb; /* Background color on hover */
-  color: rgb(248, 248, 248); /* Text color on hover */
+/* Download CV button special style */
+.btn.download {
+    background: rgba(97, 218, 251, 0.15);
+    border-color: rgba(97, 218, 251, 0.3);
 }
 
+.btn.download:hover {
+    background: rgba(97, 218, 251, 0.25);
+}
+
+/* Social media icons */
 .icon {
-  color: white; /* 图标颜色 */
-  font-size: 2em; /* 图标大小 */
-  margin-left: 18px; /* 图标与按钮之间的间距 */
-  vertical-align: middle;
-  margin-top: 2px;
-  line-height: 3;
-  transition: color 0.3s, transform 0.2s; /* 添加颜色和变换的过渡效果 */
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .icon:hover {
-  color: #54c2e0; /* 鼠标悬停时改变图标颜色 */
-  transform: scale(1.2); /* 鼠标悬停时放大图标 */
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
 }
 
-.transparent-bg {
-  background-color: transparent; /* 设置背景为透明 */
+/* Button container style optimization */
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.banner h1, .banner h2 {
-  text-shadow: 2px 2px 4px rgba(0.1, 0.1, 0.9, 0.9); /* 添加文本阴影 */
-  color: rgb(236, 236, 236); /* 确保字体颜色为白色 */
+/* Add social link styles */
+.social-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Ensure navigation items are clickable */
+.navbar li:active {
+    transform: translateY(1px);
+}
+
+/* Ensure all interactive elements have the correct z-index */
+.navbar,
+.btn,
+.social-link,
+section {
+    position: relative;
+    z-index: 2;
+}
+
+/* Remove styles that might interfere with clicks from other elements */
+.breathing-background::before,
+.breathing-background::after {
+    pointer-events: none !important;
+    z-index: -1;
+}
+
+/* Adjust title and paragraph spacing */
+h1 {
+    margin: 0 0 20px 0;
+}
+
+h2 {
+    margin: 0 0 15px 0;
+}
+
+p {
+    margin: 0 0 15px 0;
+}
+
+/* About Me section styles */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 70vh;
+}
+
+#about h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+#about p {
+    max-width: 800px; /* Control paragraph width */
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    white-space: normal; /* Ensure text wraps correctly */
+    word-wrap: break-word; /* Handle long words wrapping */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #about {
+        padding: 40px 15px;
+        min-height: 65vh;
+    }
+
+    #about p {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+}
+
+/* Skills section styles */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(175, 217, 229, 0.2);
+    border-radius: 12px;
+    padding: 15px 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background: rgba(97, 218, 251, 0.1);
+    border-color: rgba(97, 218, 251, 0.5);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+}
+
+.skill-icon {
+    font-size: 2em;
+    color: #61dafb;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-size: 1em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Skills category */
+.skills-section {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .skill-item {
+        padding: 12px 8px;
+        min-height: 90px;
+    }
+
+    .skill-icon {
+        font-size: 1.5em;
+    }
+}
+
+/* Projects section styles */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+.project-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.project-content h2 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    flex: 1;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(97, 218, 251, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-image {
+        min-height: 200px;
+    }
+
+    .project-content h2 {
+        font-size: 1.5em;
+    }
+
+    .project-content p {
+        font-size: 1em;
+    }
+}
+
+/* Contact Me section styles */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+#contact h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#contact p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#contact a {
+    color: #61dafb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Contact form styles */
+.contact-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #61dafb;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input.message {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Submit button container */
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Submit button styles */
+.submit-btn {
+    background: rgba(97, 218, 251, 0.2);
+    color: white;
+    padding: 12px 30px;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background: rgba(97, 218, 251, 0.3);
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn i {
+    font-size: 1.1em;
+}
+
+/* Status message styles */
+.success-message,
+.error-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.success-message {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.error-message {
+    color: #f44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    #contact p {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    padding-top: 50px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+    }
+
+    .timeline-content {
+        width: calc(100% - 90px);
+        margin: 0 0 0 70px;
+        text-align: left;
+    }
+
+    .timeline-content.left,
+    .timeline-content.right {
+        margin-left: 70px;
+        text-align: left;
+    }
+
+    .timeline-marker {
+        position: absolute;
+        left: 10px;
+    }
+
+    .timeline-year {
+        left: 31px;
+        transform: none;
+        font-size: 1em;
+        margin-top: -40px;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .banner-left {
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* 保持较大的间距 */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* 增加最大宽度 */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* 与 about-section 保持一致 */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* 添加到现有的 Skills 样式中 */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* 统一所有主要标题的样式 */
+section h1 {
+    font-size: 2.5em; /* 与 Contact Me 相同的大小 */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
 }
