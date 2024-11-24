@@ -197,7 +197,7 @@ function App() {
                         <div className="banner-main">
                             <div className="banner-text">
                                 <h1>Hello, I'm Charles.</h1>
-                                <h2>I am a DevOps Engineer with 8 years of experience across IT support, IT project management, data analysis, and cloud infrastructure. </h2>
+                                <h2>I am a DevOps Engineer with 8 years of experience across coding, IT project management, data analysis, and cloud infrastructure. </h2>
                                 <div className="buttons">
                                     <a href="#contact" 
                                        className="btn" 
