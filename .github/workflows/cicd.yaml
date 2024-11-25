@@ -1,12 +1,10 @@
 name: Build and Deploy Personal Website
 
 on:
+  repository_dispatch:
   push:
     branches:
       - main
-  repository_dispatch:
-    types: [deploy-website]
-
 permissions:
   id-token: write
   contents: read
