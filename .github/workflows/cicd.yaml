@@ -1,6 +1,7 @@
 name: Build and Deploy Personal Website
 
 on:
+  workflow_dispatch:
   repository_dispatch:
   push:
     branches:
