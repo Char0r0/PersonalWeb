@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  repository_dispatch:
+    types: [deploy-website]
 
 permissions:
   id-token: write
@@ -34,7 +36,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          CI: false  # 防止将警告视为错误
+          CI: false
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
