@@ -1144,3 +1144,70 @@ section h1 {
         display: flex;
     }
 }
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(2.5em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
