@@ -8,6 +8,7 @@ function App() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState(''); // For displaying sending status
+    const [isNavOpen, setIsNavOpen] = useState(false); // 新增状态
 
     // Create refs
     const homeRef = useRef(null);
@@ -153,11 +154,18 @@ function App() {
             });
     };
 
+    const toggleNav = () => {
+        setIsNavOpen(!isNavOpen); // 切换导航状态
+    };
+
     return (
         <div className="app-container">
             <div className="breathing-background" />
             
-            <nav className="navbar">
+            <nav className={`navbar ${isNavOpen ? 'open' : ''}`}>
+                <button className="nav-toggle" onClick={toggleNav}>
+                    {isNavOpen ? 'Close' : 'Menu'}
+                </button>
                 <ul>
                     <li 
                         onClick={() => handleNavClick('home', homeRef)}
