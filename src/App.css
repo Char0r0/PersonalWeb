@@ -428,21 +428,49 @@ p {
     text-align: center;
 }
 
-/* Responsive adjustments */
+/* Skills section styles */
 @media (max-width: 768px) {
     .skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr); /* 每行显示3个 */
         gap: 10px;
         padding: 5px;
+        width: 100%;
     }
 
     .skill-item {
-        padding: 12px 8px;
-        min-height: 90px;
+        padding: 10px 5px;
+        min-height: 80px;
+        font-size: 0.9em;
     }
 
     .skill-icon {
         font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .skill-name {
+        font-size: 0.8em;
+    }
+
+    .skill-details {
+        display: none; /* 在移动端隐藏详细描述 */
+    }
+
+    /* 调整技能分类标题 */
+    .skills-section {
+        margin-bottom: 20px;
+    }
+
+    .skills-section h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    /* 在更小的屏幕上每行显示2个 */
+    @media (max-width: 480px) {
+        .skills-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
@@ -673,14 +701,70 @@ p {
 }
 
 /* Responsive adjustments */
+/* Contact Me 移动端样式调整 */
 @media (max-width: 768px) {
-    .contact-form {
-        padding: 20px;
+    #contact {
+        padding: 20px 15px;
+    }
+
+    #contact h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
     }
 
     #contact p {
-        font-size: 1.1em;
+        font-size: 0.9em;
         padding: 0 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .form-input {
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    .form-input.message {
+        min-height: 120px;
+    }
+
+    /* 提交按钮样式调整 */
+    .submit-btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+
+    .submit-container {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    /* 调整状态消息样式 */
+    .success-message,
+    .error-message {
+        font-size: 0.85em;
+        padding: 8px;
+        margin-top: 10px;
+    }
+}
+
+/* 在更小的屏幕上进一步优化 */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 12px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
     }
 }
 
@@ -864,38 +948,77 @@ p {
     backdrop-filter: blur(5px);
 }
 
-/* Responsive adjustments */
+/* Timeline Responsive adjustments */
 @media (max-width: 768px) {
+    .timeline {
+        padding: 20px 10px;
+        margin: 20px auto;
+    }
+
     .timeline::after {
-        left: 31px;
+        left: 20px;
     }
 
     .timeline-item {
-        justify-content: flex-start;
+        margin: 30px 0;
     }
 
     .timeline-content {
-        width: calc(100% - 90px);
-        margin: 0 0 0 70px;
-        text-align: left;
+        width: calc(100% - 50px);
+        padding: 15px;
+        margin-left: 40px;
     }
 
     .timeline-content.left,
     .timeline-content.right {
-        margin-left: 70px;
+        margin-left: 40px;
         text-align: left;
     }
 
     .timeline-marker {
-        position: absolute;
-        left: 10px;
+        left: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline-marker i {
+        font-size: 1em;
     }
 
     .timeline-year {
-        left: 31px;
+        left: 0;
         transform: none;
+        padding: 3px 10px;
+        font-size: 0.9em;
+        margin-left: 40px;
+        margin-bottom: 15px;
+    }
+
+    /* 调整内容样式 */
+    .timeline-content h3 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .timeline-content h4 {
         font-size: 1em;
-        margin-top: -40px;
+        margin-bottom: 5px;
+    }
+
+    .timeline-content p {
+        font-size: 0.9em;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .timeline-date {
+        font-size: 0.8em;
+        padding: 3px 10px;
+    }
+
+    /* 隐藏空白内容 */
+    .timeline-content[style*="visibility: hidden"] {
+        display: none;
     }
 }
 
@@ -944,18 +1067,46 @@ p {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .banner .content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
         gap: 30px;
     }
 
-    .banner-left {
+    .banner-text {
         text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
     }
 
     .profile-photo {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
     }
 }
 
