@@ -431,7 +431,7 @@ p {
 /* Skills section styles */
 @media (max-width: 768px) {
     .skills-container {
-        grid-template-columns: repeat(3, 1fr); /* 每行显示3个 */
+        grid-template-columns: repeat(3, 1fr); /* Show 3 items per row */
         gap: 10px;
         padding: 5px;
         width: 100%;
@@ -460,10 +460,10 @@ p {
     }
 
     .skill-details {
-        display: none; /* 在移动端隐藏详细描述 */
+        display: none; /* Hide detailed description on mobile */
     }
 
-    /* 调整技能分类标题 */
+    /* Adjust skills category title */
     .skills-section {
         margin-bottom: 20px;
     }
@@ -473,7 +473,7 @@ p {
         margin-bottom: 10px;
     }
 
-    /* 在更小的屏幕上每行显示2个 */
+    /* Show 2 items per row on smaller screens */
     @media (max-width: 480px) {
         .skills-container {
             grid-template-columns: repeat(2, 1fr);
@@ -488,7 +488,7 @@ p {
     gap: 30px;
     max-width: 1200px;
     width: 90%;
-    margin: 40px auto;
+    margin: 10px auto;
     padding: 20px;
 }
 
@@ -708,10 +708,10 @@ p {
 }
 
 /* Responsive adjustments */
-/* Contact Me 移动端样式调整 */
+/* Contact Me mobile styles adjustment */
 @media (max-width: 768px) {
     #contact {
-        padding: 20px 15px;
+        padding: 15px 15px;
     }
 
     #contact h1 {
@@ -735,7 +735,7 @@ p {
 
     .form-input {
         width: 100%;
-        box-sizing: border-box; /* 确保padding不会增加总宽度 */
+        box-sizing: border-box; /* Ensure padding does not increase total width */
         padding: 12px;
         margin-bottom: 15px;
         border-radius: 8px;
@@ -747,7 +747,7 @@ p {
         resize: vertical;
     }
 
-    /* 提交按钮样式调整 */
+    /* Submit button styles adjustment */
     .submit-container {
         width: 100%;
         display: flex;
@@ -755,13 +755,13 @@ p {
         margin-top: 20px;
     }
 
-    /* 提交按钮 */
+    /* Submit button */
     .submit-btn {
         padding: 10px 30px;
         font-size: 1em;
     }
 
-    /* 调整状态消息样式 */
+    /* Adjust status message styles */
     .success-message,
     .error-message {
         font-size: 0.85em;
@@ -770,7 +770,7 @@ p {
     }
 }
 
-/* 在更小的屏幕上进一步优化 */
+/* Additional adjustments for smaller screens */
 @media (max-width: 480px) {
     .contact-form {
         width: 95%;
@@ -843,7 +843,6 @@ p {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    padding-top: 50px;
 }
 
 /* Vertical line in the middle */
@@ -963,19 +962,19 @@ p {
 }
 
 @media (max-width: 768px) {
-    /* 移除时间线和marker */
+    /* Remove timeline and marker */
     .timeline::after,
     .timeline-marker,
     .timeline-year {
         display: none;
     }
 
-    /* 重置容器样式 */
+    /* Reset container styles */
     .timeline {
         padding: 20px 10px;
     }
 
-    /* 调整每个经验项的样式 */
+    /* Adjust each experience item styles */
     .timeline-item {
         margin: 0 auto 5px;
         width: 100%;
@@ -983,13 +982,13 @@ p {
         flex-direction: column;
     }
 
-    /* 调整左侧内容样式 - 只隐藏空的左侧内容 */
+    /* Adjust left content styles - only hide empty left content */
     .timeline-content.left:empty,
     .timeline-content.left[style*="visibility: hidden"] {
         display: none;
     }
 
-    /* 保留有内容的左侧部分 */
+    /* Keep left part with content */
     .timeline-content.left:not(:empty) {
         width: 100%;
         margin: 0;
@@ -1004,7 +1003,7 @@ p {
         display: none;
     }
 
-    /* 右侧内容样式 */
+    /* Right content styles */
     .timeline-content.right:not(:empty) {
         width: 100%;
         margin: 0;
@@ -1014,7 +1013,7 @@ p {
         border-radius: 12px;
     }
 
-    /* 内容文字样式 */
+    /* Content text styles */
     .timeline-content h3 {
         color: #61dafb;
         font-size: 1.3em;
@@ -1034,7 +1033,7 @@ p {
         margin-bottom: 12px;
     }
 
-    /* 日期样式 */
+    /* Date styles */
     .timeline-date {
         display: inline-block;
         padding: 5px 12px;
@@ -1137,7 +1136,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 180px; /* 保持较大的间距 */
+    gap: 180px; /* Maintain larger spacing */
     width: 100%;
     padding-top: 50px;
     padding-bottom: 40px;
@@ -1152,7 +1151,7 @@ p {
 }
 
 .about-section {
-    max-width: 950px; /* 增加最大宽度 */
+    max-width: 950px; /* Increase max width */
     margin: 0 auto;
     text-align: center;
     padding-top: 100px;
@@ -1176,12 +1175,12 @@ p {
     margin: 0 auto;
     text-align: center;
     font-weight: 400;
-    max-width: 950px; /* 与 about-section 保持一致 */
+    max-width: 950px; /* Keep consistent with about-section */
     font-family: 'Roboto', sans-serif;
     padding: 0 30px;
 }
 
-/* 响应式调整 */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .banner-content {
         gap: 80px;
@@ -1223,7 +1222,7 @@ p {
     font-weight: bold;
 }
 
-/* 响应式调整 */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .banner-text {
         text-align: center;
@@ -1238,7 +1237,7 @@ p {
     }
 }
 
-/* 添加到现有的 Skills 样式中 */
+/* Add to existing Skills styles */
 .skill-details {
     font-size: 0.85em;
     color: rgba(255, 255, 255, 0.7);
@@ -1261,19 +1260,19 @@ p {
     margin-bottom: 15px;
 }
 
-/* 统一所有主要标题的样式 */
+/* Uniform styles for all main titles */
 section h1 {
-    font-size: 2.5em; /* 与 Contact Me 相同的大小 */
+    font-size: 2.5em; /* Same size as Contact Me */
     margin-bottom: 30px;
     color: #ffffff;
     text-align: center;
 }
 
-/* 响应式调整 */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     section h1 {
         font-size: 2em;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
     }
 }
 
@@ -1286,9 +1285,9 @@ section h1 {
     }
 }
 
-/* 新增导航按钮样式 */
+/* New navigation toggle button styles */
 .nav-toggle {
-    display: none; /* 默认隐藏 */
+    display: none; /* Default hidden */
     background: transparent;
     border: none;
     color: white;
@@ -1296,7 +1295,7 @@ section h1 {
     cursor: pointer;
 }
 
-/* 768px*/
+/* 768px */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
@@ -1382,5 +1381,327 @@ section h1 {
 
     .timeline-year {
         display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
     }
 }
