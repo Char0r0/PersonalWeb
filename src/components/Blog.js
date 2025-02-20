@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route, Switch, useRouteMatch, useParams } from 'react-router-dom';
+import { Link, Route, Switch, useRouteMatch, useParams, useLocation } from 'react-router-dom';
 import { marked } from 'marked';
 import '../styles/Blog.css';
 
@@ -9,6 +9,7 @@ import generatedPosts from '../data/generatedPosts.json';
 function Blog() {
     const [blogPosts, setBlogPosts] = useState([]);
     const { path, url } = useRouteMatch();
+    const location = useLocation();
 
     useEffect(() => {
         // 处理博客文章
@@ -18,6 +19,11 @@ function Blog() {
         }));
         setBlogPosts(processedPosts);
     }, []);
+
+    // 监听路由变化，滚动到顶部
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     return (
         <Switch>
