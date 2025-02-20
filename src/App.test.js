@@ -13,8 +13,8 @@ test('renders navigation menu', () => {
   const navItems = navbar.querySelectorAll('li');
   
   expect(navItems[0]).toHaveTextContent('Home');
-  expect(navItems[1]).toHaveTextContent('Skills');
-  expect(navItems[2]).toHaveTextContent('Experience');
+  expect(navItems[1]).toHaveTextContent('Blog');
+  expect(navItems[2]).toHaveTextContent('Skills');
 });
 
 test('renders contact buttons', () => {
