@@ -3,13 +3,17 @@ FROM node:18 AS builder
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy source code
 COPY . .
 
-RUN npm run build
+# Generate blog posts and build the app
+RUN node scripts/buildBlog.js && npm run build
 
 # Stage 2: Production
 FROM nginx:alpine

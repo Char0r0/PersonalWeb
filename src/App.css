@@ -125,6 +125,9 @@ body {
     position: relative;
     z-index: inherit;
     pointer-events: all !important;
+    align-items: center; /* 添加这行确保垂直对齐 */
+    justify-content: space-around; /* 添加这行确保水平均匀分布 */
+    width: 100%; /* 确保占满整个导航栏宽度 */
 }
 
 .navbar li {
@@ -138,6 +141,8 @@ body {
     position: relative;
     z-index: inherit;
     pointer-events: all !important;
+    text-align: center; /* 添加这行确保文字居中 */
+    flex: 1; /* 添加这行确保每个项目占用相同空间 */
 }
 
 .navbar li:hover {
@@ -1704,4 +1709,4429 @@ section h1 {
         border-radius: 15px;
         font-size: 0.9em;
     }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.about-website {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .copyright, 
+    .about-website {
+        font-size: 0.8em;
+    }
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(97, 218, 251, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+/* Timeline content container */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    width: calc(50% - 50px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+
+/* Left side content */
+.timeline-content.left {
+    margin-right: 50px;
+    text-align: right;
+}
+
+/* Right side content */
+.timeline-content.right {
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Timeline marker point */
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    background: rgba(97, 218, 251, 0.2);
+    border: 3px solid rgba(97, 218, 251, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-marker i {
+    color: #61dafb;
+    font-size: 1.2em;
+}
+
+/* Content styles */
+.timeline-content h3 {
+    color: #61dafb;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date label */
+.timeline-date {
+    display: inline-block;
+    background: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+}
+
+/* Add year marker styles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    margin-top: -50px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    /* Remove timeline and marker */
+    .timeline::after,
+    .timeline-marker,
+    .timeline-year {
+        display: none;
+    }
+
+    /* Reset container styles */
+    .timeline {
+        padding: 1px 10px;
+        margin: 10px auto;
+    }
+
+    /* Adjust each experience item styles */
+    .timeline-item {
+        margin: 0 auto 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust left content styles - only hide empty left content */
+    .timeline-content.left:empty,
+    .timeline-content.left[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Keep left part with content */
+    .timeline-content.left:not(:empty) {
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .timeline-content.right:empty,
+    .timeline-content.right[style*="visibility: hidden"] {
+        display: none;
+    }
+
+    /* Right content styles */
+    .timeline-content.right:not(:empty) {
+        width: 90%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    /* Content text styles */
+    .timeline-content h3 {
+        color: #61dafb;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content h4 {
+        color: #ffffff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Date styles */
+    .timeline-date {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(97, 218, 251, 0.1);
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Banner layout styles */
+.banner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 50px;
+}
+
+.banner-left {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(97, 218, 251, 0.3);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    border-color: rgba(39, 208, 255, 0.283);
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .banner-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner-text {
+        text-align: center;
+        order: 2;
+    }
+
+    .banner-right {
+        order: 1;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Banner content styles */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px; /* Maintain larger spacing */
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 950px; /* Increase max width */
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.about-title {
+    color: #c5f3ffe3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3em !important;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    max-width: 950px; /* Keep consistent with about-section */
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        gap: 80px;
+    }
+
+    .about-section {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .about-description {
+        font-size: 1.1em !important;
+        padding: 0 15px;
+    }
+}
+
+/* Banner text styles */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    max-width: 600px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.banner-text h2 {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.banner-text .highlight {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Add to existing Skills styles */
+.skill-details {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.skill-item {
+    /* padding: 25px 20px; */
+    min-height: 120px;
+}
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-section h2 {
+    color: #61dafb;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Uniform styles for all main titles */
+section h1 {
+    font-size: 2.5em; /* Same size as Contact Me */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* New navigation toggle button styles */
+.nav-toggle {
+    display: none; /* Default hidden */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(21, 21, 21, 0.7);
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1rem * 0.67); /* Set base font size for mobile to 2/3 of original */
+    }
+
+    h1 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h1 to 2/3 of original */
+    }
+
+    h2 {
+        font-size: calc(1.6em * 0.67); /* Decrease font size for h2 to 2/3 of original */
+    }
+
+    h3 {
+        font-size: calc(1.4em * 0.67); /* Decrease font size for h3 to 2/3 of original */
+    }
+
+    p {
+        font-size: calc(1em * 0.67); /* Decrease font size for paragraphs to 2/3 of original */
+    }
+
+    /* Adjust font size for other elements as needed */
+    .navbar li {
+        font-size: calc(0.95em * 0.67); /* Decrease font size for navbar items to 2/3 of original */
+    }
+
+    .btn {
+        font-size: calc(1em * 0.67); /* Decrease font size for buttons to 2/3 of original */
+    }
+
+    /* Add more styles as needed */
+}
+
+/* Work Experience section styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for Work Experience */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        margin: 20px 0; /* Reduce margin between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Add some padding */
+    }
+
+    .timeline-marker {
+        margin-bottom: 10px; /* Add space below marker */
+    }
+
+    .timeline-year {
+        display: none; /* Optionally hide year labels for mobile */
+    }
+}
+
+/* Contact Form mobile styles adjustment */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Adjust input field styles */
+    .form-input {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding does not increase total width */
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Message box styles */
+    .form-input.message {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    /* Submit button container */
+    .submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    /* Adjust text description styles */
+    #contact p {
+        padding: 0 20px;
+        margin-bottom: 25px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #contact p {
+        font-size: 0.85em;
+    }
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(21, 21, 21, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+}
+
+/* 添加新的导航链接样式 */
+.navbar li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover {
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.1);
+}
+
+.navbar li a.active {
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.2);
+    box-shadow: 0 2px 10px rgba(97, 218, 251, 0.3);
 }
